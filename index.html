@@ -1,0 +1,922 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>疯玩游戏 - H-Cube.ga</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/user_sign_ui.css">
+<style>
+@keyframes roty {
+ 0% {
+transform: rotateY(0deg);
+}
+ 20% {
+transform: rotateY(0deg);
+}
+ 25% {
+transform: rotateY(90deg);
+}
+ 45% {
+transform: rotateY(90deg);
+}
+ 50% {
+transform: rotateY(180deg);
+}
+ 70% {
+transform: rotateY(180deg);
+}
+ 75% {
+transform: rotateY(270deg);
+}
+ 95% {
+transform: rotateY(270deg);
+}
+ 100% {
+transform: rotateY(360deg);
+}
+}
+	@keyframes rot_wiggle{
+		0%{transform: rotate(0deg)}
+		40%{transform: rotate(-30deg)}
+		60%{transform: rotate(30deg)}
+		100%{transform: rotate(0deg)}
+	}
+@font-face {
+	font-family: JackieHan_FontIcon;
+	src: url('img/hkj_icon.woff'), url('img/hkj_icon.ttf');
+}
+body, ol, ul, li, p, div, input, button {
+	font-family: "微软雅黑", "华文细黑", "等线", "黑", Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, WenQuanYi Micro Hei, Arial;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	font-size: 16px;
+}
+	body{
+		min-width:480px;
+	}
+.font_icon{
+	font-family: JackieHan_FontIcon;
+	}
+.banner {
+	/*background: linear-gradient(to right,rgba(128,128,128,0),rgba(0,0,0,0.5),rgba(128,128,128,0));*/
+	background: url(img/banner_bg.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	width: 100%;
+	height: 350px;
+	box-sizing: border-box;
+	margin: 0px auto;
+	position: relative;
+	z-index: 0;
+}
+.banner_outter_container {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 960px;
+	height: 350px;
+	overflow: hidden;
+}
+.banner_container {
+	width: 0%;
+	margin: 0px auto;
+	display: block;
+	transform: translateX(-480px);
+	box-sizing: content-box;
+}
+.banner_slide {
+	position: relative;
+	transform-style: preserve-3d;
+	animation: roty 20s infinite ease;
+	transform-origin: 480px 0px 0px;
+		transition: 0.4s ease all;
+
+}
+.slide {
+	display: block;
+	position: absolute;
+	width: 960px;
+	height: 350px;
+	line-height: 350px;
+	text-align: center;
+	backface-visibility: hidden;
+}
+.s1 {
+	background: url(img/20171101234912a1e3b8c443364bba969fc99d951350d6.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	transform-origin: right;
+	/* transform: rotatey(90deg); */
+	transform: rotateY( 0deg ) translateZ( 480px );
+}
+.s2 {
+	background: url(img/timg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	transform: translateX(-480px) rotateY(-90deg);    /* transform: rotateY( 180deg ) translateZ( 480px ); */
+}
+.s3 {
+	background: url(img/201711082035167f47d294ca0845cdb4728f77ebe96b36.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	/* transform-origin: left; */
+    /* transform: rotateY(-90deg); */
+	transform: rotateY( 90deg ) translateZ( 480px );
+}
+.s4 {
+	background: url(img/20171108205035533d239b0f04467882abf1326dc76073.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* transform: rotateY( -90deg ) translateZ( 480px ); */
+	background-position: center bottom;
+	transform: translateZ(-480px) rotateY(180deg);
+}
+header {
+	display: block;
+	height: 90px;
+	width: 100%;
+	background: rgba(244,244,244,1.00);
+}
+.header_content {
+	word-wrap: break-word;
+	margin: 0 auto;
+	max-width: 960px;
+}
+.logo_content {
+	float: left;
+	margin: 5px;
+}
+.logo_content svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+.header_btn_group {
+	float: right;
+	margin: 22px 10px 22px 0px;
+}
+
+.header_btn_group_text{
+	font-size: 18px;
+	padding: 10px;
+	display: inline-block;
+	transition: 0.4s ease all;
+	cursor: pointer;
+	}
+.header_btn_group_text:hover {
+	background: rgba(255,87,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+	
+.header_btn_group_icon{
+	font-size: 38px;
+	padding: 6px 0px;
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.4s ease all;
+    cursor: pointer;
+	line-height: 30px;
+	}
+	
+.header_btn_group_icon:hover {
+	border-radius: 10px;
+	background: rgba(255,87,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+	
+
+	
+nav {
+	height: 58px;
+	background: linear-gradient(rgba(60,60,60,1.00), rgba(40,40,40,1.00));
+}
+.nav_bar_content {
+	max-width: 960px;
+	margin: 0 auto;
+}
+.nav_dropdown_menu {
+	position: relative;
+	margin: 0 auto;
+	display: inline-block;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+	padding: 16px 20px;
+	cursor: pointer;
+}
+.nav_dropdown_menu:hover {
+	background: rgba(71,71,71,1.00);
+}
+.nav_dropdown_menu_container {
+	display: none;
+	background: rgba(34,34,34,0.7);
+	position: absolute;
+	z-index: 1;
+	padding: 0;
+	left: 0px;
+	top: 53px;
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+	word-break: keep-all;/*使得文字不换行*/
+}
+.nav_dropdown_menu:hover .nav_dropdown_menu_container {
+	display: block;
+}
+.nav_dropdown_menu:hover .nav_dropdown_menu_container li {
+}
+.nav_dropdown_menu_bg {
+	position: absolute;
+	width: 100%;
+	height: 0px;
+	bottom: 0px;
+	left: 0px;
+	background: rgba(243,0,4,1.00);
+	z-index: 300;
+	transition: ease 0.3s all;
+}
+.nav_dropdown_menu:hover .nav_dropdown_menu_bg {
+	height: 4px;
+}
+.nav_dropdown_menu_container li {
+	padding: 10px;
+}
+.nav_dropdown_menu_container li:hover {
+	background: rgba(255,55,0,1.00);
+}
+.nav_bar_content_title {
+	z-index: 100;
+	display: block;
+}
+.banner_control_point {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 20;
+}
+.banner_control_point li {
+	box-sizing: border-box;
+	margin: 8px;
+	width: 16px;
+	height: 16px;
+	background: rgba(255,255,255,1.00);
+	border-radius: 8px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	transition: 0.3s ease-in all;
+}
+.banner_control_point li:hover {
+	background: rgba(255,118,0,1.00);
+	border: rgba(255,255,255,1.00) solid 2px;
+	}
+.content_wrap {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+.header_right {
+	float: right;
+}
+.header_search {
+	position: relative;
+	float: left;
+	margin: 24px;
+	border: rgba(255,95,0,1.00) solid 3px;
+	width: 200px;
+	border-radius: 20px;
+	line-height: 30px;
+}
+.header_search input {
+	float: left;
+	border: 0;
+	height: 32px;
+	width: 168px;
+	background: rgba(255,255,255,0.00);
+}
+.header_search button {
+	cursor: pointer;
+	float: right;
+	border: 0;
+	font-family: JackieHan_FontIcon;
+	font-weight: 600;
+	font-size: 26px;
+	color: white;
+	padding: 2px;
+	background: rgba(255,95,0,1.00);
+	border-radius: 0px 16px 16px 0px;
+	width: 32px;
+	height: 32px;
+	transition: 0.5s all ease;
+}
+.header_search button span {
+	transition: 0.5s all ease;
+}
+.header_search button:hover {
+	background: rgba(255,166,0,1.00);
+}
+.header_search button:hover span {
+	transform: rotate(360deg)
+}
+	
+
+.banner_control_btn {
+	width: 100%;
+	max-width: 960px;
+	height: 350px;
+	margin: 0 auto;
+	z-index: 10;
+	opacity: 0;
+	transition: ease 0.5s all;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+.banner:hover .banner_control_btn {
+	opacity: 1;
+}
+.banner_control_btn div {
+	height: 350px;
+	width: 100px;
+	cursor: pointer;
+}
+.banner_left {
+	float: left;
+	background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.6));
+	pointer-events: all;
+	}
+.banner_right {
+	float: right;
+	background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.6));
+	pointer-events: all;
+}
+.header_right_719 {
+	display: none;
+}
+	
+.content_left{
+		float:left;
+		width:33%;
+		box-sizing: border-box;
+		display: inline-block
+
+	}
+	.content_right{
+		float:right;
+		width:67%;
+		box-sizing: border-box;
+				display: inline-block
+
+	}
+	.card_topic{
+		height: 18px;
+		padding: 10px 10px 10px 20px;
+		font-size: 16px;
+		line-height: 18px;
+		background:rgba(255,100,0,1.00);
+		color: rgba(255,255,255,1.00);
+	}
+	.content_left .card{
+		margin: 12px 6px 6px 0px;
+	}
+	
+	.content_right .card{
+		margin: 12px 0px 6px 6px;
+	}
+	
+	
+	
+	.card_content{
+		border: 1px solid rgba(255,139,38,1.00);
+	}
+	.card_title{
+		margin: 4px;
+		padding: 4px;
+		transition: 0.3s ease all;
+		cursor: pointer;
+		border-bottom: 1px rgba(175,175,175,1.00) solid;
+
+	}
+	
+	.card_title:hover{
+		background: rgba(230,230,230,1.00);
+	}
+	
+		.card_title:hover .game_slogan{
+		color:rgba(255,166,0,1.00);
+	}
+	
+
+	
+	.game_icon{
+		width:40px;
+		height: 40px;
+		display: inline-block;
+		background-position: center center;
+		background-size: cover;
+		border-radius: 32px;
+	}
+	.game_li{
+		display:inline-block;
+	}
+	
+	.game_slogan{
+		font-size: 14px;
+		color:rgba(70,70,70,1.00);
+	}
+	
+			.card_about_me li:hover{
+		border-left: solid 5px rgba(255,100,0,1.00);
+	}
+	
+	/*页脚*/
+.footer{
+	clear: both;
+	width: 100%;
+	padding-top: 15px;
+		margin: 0 auto;
+
+}
+.footer_content{
+	background: rgba(47,47,47,1.00);
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+}
+.footer_part {
+	padding-bottom: 20px;
+}
+.footer_social_media svg {
+	height: 32px;
+	width: 32px;
+}
+.footer_item {
+	padding: 6px 7px;
+	margin: 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item:hover {
+	background-color: rgba(96,96,96,0.30);
+	border-radius: 15px;
+}
+.footer_item_icon {
+	padding: 8px;
+	margin: 2px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+
+	
+	
+.footer_item_icon svg{
+	vertical-align:middle; /*垂直对齐图像*/
+}
+.footer_item_icon:hover {
+	background-color: rgba(244,244,244,0.10);
+	border-radius: 20px;
+	text-decoration: none;
+	animation: rot_wiggle 0.5s infinite ease;
+}
+.footer_part a:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.footer_part a:visited {
+	color: #FFFFFF;
+}
+.footer_part a:hover {
+	text-decoration: underline;
+}
+
+.footer_copyright {
+	color: white;
+	padding: 0px 0px 0px 5px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+
+
+
+	
+
+@media (max-width: 720px) {
+.header_right_720 {
+	display: none;
+}
+.header_right_719 {
+	display: inline-block;
+;
+}
+header {
+	border-bottom: rgba(19,19,19,1.00) solid 3px;
+	height: 60px
+}
+#logo_svg {
+	height: 50px !important;
+}
+#slogan_svg {
+	height: 30px !important;
+}
+.header_btn_group {
+	float: right;
+	margin: 8px 10px 8px 0px;
+}
+nav {
+	/*display: none;*/
+}
+	
+	
+.banner,.banner_outter_container,.banner_control_btn div,.banner_control_btn,.slide {
+	height: 280px;
+}
+	.content_left{
+		float: none;
+		width: 100%;
+	}
+	
+	
+		.content_right{
+		float: none;
+		width: 100%;
+	}
+	
+
+	
+		.content_left .card,.content_right .card{
+		margin:4px 0px;
+	}
+	
+	
+
+
+
+</style>
+	
+</head>
+
+<body>
+
+
+<div id="container"> 
+  <!--页面头部标题开始-->
+  <header>
+    <div class="header_content">
+      <div class="logo_content">
+        <svg style="height:80px" id="logo_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1728.64 629.83">
+          <path d="M711.55,201.25l-20.28-20.54,13.34-13.34,20.28,20.54Zm-20.28,52.29,20.28-20,13.34,13.34-20.28,20.28Zm22.68,79,20-23.75V135.88h90.71V109.2h19.21v26.68h83v19.21H753.17V315.71l-24.81,29.35ZM759,333l16.54-19.74V175.64H908.45V324.51h18.68v19.21H889.24V194.85H794.79V320.51L774,345.59Zm61.63-121.13L842,245l21.34-33.08,16.54,10.67-26.15,40.55,26.15,40.29-16.54,10.67L842,281l-21.34,33.08-16.27-10.67,25.88-40.29-25.88-40.55Z" transform="translate(0.32 -0.18)"/>
+          <path d="M957.54,309.3h29.88v-80H961.81V210.05h25.61V147.89H959.67V128.68h74.7v19.21h-27.75v62.16h25.61v19.21h-25.61v80h29.62v19.21H957.54Zm236.92-93.65h-36.55V325.58h36v19.21H1138.7V215.66h-42.42V306.9L1064,346.12l-14.94-12,28-33.88V215.66h-35V196.45h152.34Zm-8.54-74.44H1053.59V122h132.33Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1251.82,155.63,1226.21,130l13.61-13.61,25.35,25.88Zm0,92.85-25.61-25.61,13.61-13.34,25.35,25.61Zm13.34,66.17-25.35,25.61-13.61-13.34L1251.82,301Zm95.51-142.74h-54.43v30.95H1354V345.32h-37.89V326.11h18.68V222.06h-28.55V320l-23.48,26.68-14.41-12.27L1287,313V171.9h-15.21V152.69h88.84V157l14.14-15.47V113.2H1394v22.14h65.1v19.21H1389l-18.68,20.54-9.6-8.54Zm-48-58.43,20.28,19.74-13.34,13.87L1299,127.61Zm57.63,71h83.24v28.81L1431.38,249h27.75v19.21h-33.62v76.57h-42.42V325.58h23.21V268.22h-39.22V249H1409l25.35-41.09v-4.27h-64Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1495.41,340.25,1532,249l-36.82-59,16.27-10.14,29.35,47L1564,168.7v-6.14h-73.1V143.35h92.31v29.08l-29.88,74.7,44.29,70.7L1581.32,328l-36.82-58.7-31.22,78.17Zm223.58,1.6H1670.7l-10.94-54.69-40.29,48.56-14.94-12.27,50.16-60.56-15.21-76h-46.16V167.63h42.42L1625.07,114l18.94-4,11.47,57.63h72.84v19.21h-69.1l11.21,56.83L1704,203.38l14.67,12.27-43.49,52.56,10.94,54.43H1719Zm-23.21-186.23-22.14-22.41,13.87-13.61,22.14,22.68Z" transform="translate(0.32 -0.18)"/>
+          <path d="M157.92,358.16C146,314.69,70.07,131.84,92.4,92.7,131.49,70.28,314.51,145.83,358,157.62Z" transform="translate(0.32 -0.18)" style="fill:lime"/>
+          <path d="M357.63,472.51C314.17,484.39,131.31,560.36,92.17,538c-22.42-39.09,53.14-222.11,64.92-265.61Z" transform="translate(0.32 -0.18)" style="fill:#00e7ff"/>
+          <path d="M271.57,157.69C315,145.81,497.89,69.83,537,92.17c22.42,39.09-53.14,222.11-64.92,265.61Z" transform="translate(0.32 -0.18)" style="fill:#ff931e"/>
+          <path d="M472,272.06c11.88,43.47,87.86,226.32,65.52,265.46-39.09,22.42-222.11-53.14-265.61-64.92Z" transform="translate(0.32 -0.18)" style="fill:#ef2231"/>
+          <path d="M172.86,234.22C195.2,195.08,270.78,12.07,314.24.18,357.74,12,433.73,194.81,456.15,233.9Z" transform="translate(0.32 -0.18)" style="fill:#ff0"/>
+          <path d="M456.33,396C434,435.11,358.42,618.13,315,630,271.46,618.23,195.47,435.38,173,396.29Z" transform="translate(0.32 -0.18)" style="fill:#3fa9f5"/>
+          <path d="M233.72,456.83C194.59,434.5,11.57,358.92-.32,315.46,11.47,272,194.31,196,233.4,173.55Z" transform="translate(0.32 -0.18)" style="fill:lime"/>
+          <path d="M395.47,173.36c39.14,22.33,222.16,97.91,234,141.38C617.73,358.24,434.88,434.23,395.8,456.65Z" transform="translate(0.32 -0.18)" style="fill:#ff4800"/>
+          <path d="M235.28,457.11C196,435.1,12.32,361,.08,317.67,11.5,274.08,193.71,196.58,232.61,173.83Z" transform="translate(0.32 -0.18)" style="fill:#9cff00"/>
+          <path d="M804.65,468.86V394.52h14v22.88h41.14v51.47h-14V428H818.65v40.89Z" transform="translate(0.32 -0.18)"/>
+          <path d="M867.81,436.51V425.93h67.77v10.58Z" transform="translate(0.32 -0.18)"/>
+          <path d="M996,468.86H952.75a6.66,6.66,0,0,1-4.35-1.32,5,5,0,0,1-2-3.81V422.61a4.05,4.05,0,0,1,.38-1.75,5.36,5.36,0,0,1,1.07-1.5,6.71,6.71,0,0,1,5-2H996V428H960.43v30.47H996Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1063.63,458.45h7v10.41h-56.68a8,8,0,0,1-2.26-.34,6.83,6.83,0,0,1-2-1,5.44,5.44,0,0,1-1.49-1.62,4.1,4.1,0,0,1-.6-2.18V417.48h14.08v41h27.91v-41h14.08Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1078,468.86V394.52H1092v22.88h41.14v46.34a4.13,4.13,0,0,1-.6,2.18,5.47,5.47,0,0,1-1.49,1.63,6.93,6.93,0,0,1-2,1,8,8,0,0,1-2.26.34ZM1092,428v30.47h27.06V428Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1197.21,443.15a6.25,6.25,0,0,1-1.58,4.54,6.08,6.08,0,0,1-4.57,1.63h-35v9.13h41.14v10.41h-48.83a6.68,6.68,0,0,1-5-1.88,5.34,5.34,0,0,1-1.07-1.5,4.05,4.05,0,0,1-.38-1.75V423.46a4.81,4.81,0,0,1,.6-2.31,6.7,6.7,0,0,1,1.54-1.92,8.65,8.65,0,0,1,2-1.33,5.26,5.26,0,0,1,2.22-.51h48.83Zm-41.14-4.42h27.06V428h-27.06Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1218.46,468.95h-13.23V454.44h13.23Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1281.63,492a4.59,4.59,0,0,1-1.45,3.33,6.69,6.69,0,0,1-5,1.88H1226.4V486.79h41.14V468.95H1226.4v-45.4a4.8,4.8,0,0,1,.6-2.31,6.69,6.69,0,0,1,1.54-1.92,8.61,8.61,0,0,1,2-1.32,5.24,5.24,0,0,1,2.22-.51h48.83Zm-14.08-63.93h-27.06v30.3h27.06Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1347.1,458.45H1355v10.41h-63.08V422.61a4.12,4.12,0,0,1,.6-2.18,5.7,5.7,0,0,1,1.54-1.67,6.88,6.88,0,0,1,2-1,7.47,7.47,0,0,1,2.22-.34h48.83Zm-14.08,0V428H1306v30.47Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1361.86,471.08,1387.39,391h13.23l-25.52,80.07Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1407.87,423.12a5,5,0,0,1,1.92-4.06,8,8,0,0,1,5.25-1.58h48.06v46.26a4.4,4.4,0,0,1-2,3.8,7.54,7.54,0,0,1-4.35,1.41H1422V497.2h-14.08Zm14.08,4.94v30.3H1449v-30.3Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1486,394.52v74.35h-14.08V394.52Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1551.7,458.45h7.85v10.41h-63.08V422.61a4.12,4.12,0,0,1,.6-2.18,5.7,5.7,0,0,1,1.54-1.67,6.88,6.88,0,0,1,2-1,7.47,7.47,0,0,1,2.22-.34h48.83Zm-14.08,0V428h-27.06v30.47Z" transform="translate(0.32 -0.18)"/>
+          <path d="M1609.06,417.56h14.08V492a4.59,4.59,0,0,1-1.45,3.33,6.7,6.7,0,0,1-5,1.88h-48.82V486.79h41.14V468.95h-34.74a6.17,6.17,0,0,1-4.69-1.79,6,6,0,0,1-1.71-4.27V417.56H1582v40.8h27.06Z" transform="translate(0.32 -0.18)"/>
+        </svg>
+        <svg style="height: 35px;" id="slogan_svg" data-name="slogan_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1611.62 671.64">
+          <path d="M309.69,426.79a137.79,137.79,0,0,1,8.4-28.28c7.57-18,19.4-33.58,35-43.13L339,324.11q-21.64,9.49-43.42,18.83l-21.82,9.28-10.93,4.65-11,4.58-11,4.62-11,4.57-11,4.61q-5.52,2.25-11,4.6c-14.7,6.13-29.45,12.25-44.17,18.71,16-1.7,31.84-4.13,47.62-6.95,7.9-1.37,15.75-3,23.62-4.52s15.67-3.36,23.5-5.11l11.7-2.8,11.68-2.87,3.53-.92c-.38.66-.75,1.32-1.1,2L282,381.75c-.77,1.45-1.42,2.94-2.1,4.42s-1.38,3-2,4.47c-1.19,3-2.46,6-3.47,9.1a163.46,163.46,0,0,0-5.37,18.64,227.48,227.48,0,0,0-5,37.18c-1.38,24.58.47,48.16,2,70.78L271,594.26c3.3,45.33,6.78,90.74,11,136.22l1.63,17.06,1.76,17.06.87,8.53,1,8.53c.65,5.69,1.22,11.38,1.93,17.07l2.07,17.08c.58,4.37,1.14,8.74,1.72,13.1A123.18,123.18,0,0,0,272.84,831,126.3,126.3,0,0,0,239,842.5a104.68,104.68,0,0,0-29.61,22.15l.08.18-.46,0,5.71,13.83a166.44,166.44,0,0,0,35.2.09,205.33,205.33,0,0,0,32.36-5.95,187.64,187.64,0,0,0,31.35-11.29c2.61-1.18,5.22-2.49,7.83-3.9s5.24-2.84,7.86-4.46c1.32-.79,2.63-1.61,3.95-2.49l2-1.3,2-1.41a75.26,75.26,0,0,0,8-6.3,65.9,65.9,0,0,0-9.07-4.78l-2.27-1-2.27-.85c-1.52-.58-3-1.1-4.56-1.58-3-.92-6.08-1.69-9.13-2.34s-6.08-1.1-9.12-1.47c-1.88-.22-3.76-.38-5.63-.5.45-4.52.86-9,1.3-13.55l1.46-17.15c.5-5.72.85-11.44,1.29-17.15l.61-8.58.52-8.58,1-17.16c.29-5.72.6-11.44.83-17.17q3.06-68.67,1.51-137.48c-.55-22.93-1.43-45.86-2.79-68.79s-3-44.95-2.29-66A209.2,209.2,0,0,1,309.69,426.79Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M477.54,398a95.69,95.69,0,0,0-2.76-10.15,46.82,46.82,0,0,0-5.37-11.11,27.62,27.62,0,0,0-9.91-9.15l0,.06c-.3-.23-.62-.46-.94-.68a16.44,16.44,0,0,0-2-.94,11.54,11.54,0,0,0-4.77-.58l-4.18.2.44,13.28a16.84,16.84,0,0,1-.94,5.7c-.55,1.82-1.19,3.78-1.9,6s-1.44,4.62-2.15,7.33c-.69,2.88-1.32,5.82-1.84,8.73a165.59,165.59,0,0,0-2.4,35,152.58,152.58,0,0,0,5.23,35,130.22,130.22,0,0,0,6.13,17.51c1.27,2.92,2.66,5.84,4.28,8.76a72.7,72.7,0,0,0,5.5,8.76,72.7,72.7,0,0,0,5.56-8.73c1.63-2.91,3-5.82,4.33-8.73a130.21,130.21,0,0,0,6.24-17.48,152.58,152.58,0,0,0,5.45-35,165.59,165.59,0,0,0-2.18-35C478.82,403.85,478.21,401,477.54,398ZM455,380.76a1.78,1.78,0,0,1-.61-.46,1.37,1.37,0,0,1-.34-.52,1.16,1.16,0,0,1,0-.52c.14-.65.83-.9,1.64-.88a6,6,0,0,1,.61.09l.2.07-.7,2.52A1.79,1.79,0,0,1,455,380.76Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M798,723.89a57.39,57.39,0,0,1-13.38-17.58,74.5,74.5,0,0,1-4.28-10.16,82.25,82.25,0,0,1-2.74-10.55,152.36,152.36,0,0,1-2.38-22.29c-.31-7.51-.06-15.1.3-22.76s1-15.41,1.68-23.26,1.24-15.82,1.68-24l.29-6.13c.06-2.06.15-4.12.17-6.2,0-4.16,0-8.35-.16-12.6a172.45,172.45,0,0,0-2.85-26,123.36,123.36,0,0,0-8.22-26.09l-.71-1.59c-.25-.55-.44-1-.76-1.65a36.83,36.83,0,0,0-2.68-4.61,27.16,27.16,0,0,0-5.61-6,24.59,24.59,0,0,0-4.51-2.81,26.88,26.88,0,0,0-2.52-1l-1.29-.43c-.45-.13-.91-.23-1.37-.34a25.21,25.21,0,0,0-2.78-.48c-.93-.09-1.86-.14-2.79-.14a25.26,25.26,0,0,0-2.66.16c-.43,0-.89.1-1.3.17l-1.19.24c-.77.17-1.64.37-2.3.59s-1.39.47-2.07.73-1.22.52-1.82.81l-.88.43-.78.43a38.28,38.28,0,0,0-9,7.14c-1.12,1.17-2.13,2.34-3.05,3.5l-2,2.57-3.69,4.68c-2.46,3.16-4.9,6.29-7.35,9.53s-4.9,6.49-7.34,9.8l-3.62,5.1c-1.21,1.7-2.38,3.5-3.58,5.25-3.69,5.51-7.22,11.35-10.44,17.36-1.28-2.61-2.55-5.17-3.78-7.63-3-6-5.86-11.69-8.56-17.51-1.34-2.91-2.67-5.82-4-8.77l-2.21-4.93c-.88-1.92-1.89-3.91-3-5.95A57.09,57.09,0,0,0,648.8,508l-.84-.82-.92-.82c-.63-.55-1.24-1.08-1.91-1.61a40.69,40.69,0,0,0-4.44-3,37.88,37.88,0,0,0-5.12-2.53,37.42,37.42,0,0,0-17.48-2.44,43.7,43.7,0,0,0-5.85,1.08,49.48,49.48,0,0,0-5.34,1.9,42.64,42.64,0,0,0-8.66,5.2,41.55,41.55,0,0,0-3.41,2.91l-1.54,1.48c-.52.5-.93,1-1.39,1.48a66.22,66.22,0,0,0-8.52,11.91c-.56,1-1.11,2-1.6,3s-1,2-1.45,3-.92,2-1.33,3l-.63,1.49c-.21.5-.33.86-.51,1.29q-4.06,10.27-7.43,20.77a113.64,113.64,0,0,0-4.57-11,67,67,0,0,0-13.34-18.87l-2.32-2.23.25,2.94c.27,3.12.61,6.24.91,9.36.3-2,.61-4,.92-6a70.22,70.22,0,0,1,6.77,17.29A140,140,0,0,1,562.42,568c.32,3.62.56,7.29.76,11,0,.62.07,1.24.11,1.85A336.41,336.41,0,0,0,556.84,617a329,329,0,0,0,.51,84.65l30.26.34c.45-7.67.73-15.35.74-23,0-4.54,0-9.08-.13-13.61a350.38,350.38,0,0,1,5.45-42.67A340.89,340.89,0,0,1,616,550.2c.15-.34.32-.77.45-1l.38-.82c.25-.56.52-1.08.79-1.61s.55-1,.83-1.54.57-1,.85-1.45c.52-.84,1-1.61,1.56-2.31l.08.14c.48.92,1,1.93,1.49,3.08l1.86,4.31c1.38,3.23,2.83,6.44,4.3,9.65,2.95,6.4,6.05,12.77,9.11,18.79S643.6,589,646,594.54s4.68,11.2,6.75,17.12,4,12,5.91,18.2l20.14,64.93,20.28-64.41c1.15-3.65,2.25-7.38,3.44-11l1.74-5.42,1.8-5.32c2.44-7,5-13.8,7.9-20.24a185.13,185.13,0,0,1,9.87-18.87c3.72-6.24,7.87-12.56,12.19-19l5.49-8.05a129.21,129.21,0,0,1,7,28.48c4.17,29.06,1.82,61.7,8.13,94.49a148,148,0,0,0,6.71,24.17A83.79,83.79,0,0,0,775.82,712a68.58,68.58,0,0,0,8.69,9.27,52.94,52.94,0,0,0,10.35,7.28,40.23,40.23,0,0,0,11.78,4.19,33.91,33.91,0,0,0,12.12.06,35.17,35.17,0,0,1-11.27-2.87A38.93,38.93,0,0,1,798,723.89ZM623.72,538.43h0C623.95,538.27,624,538.28,623.72,538.43Zm111.7-8.79.17.29a4.1,4.1,0,0,1-.55-.74C734.94,529,735.12,529.14,735.42,529.63Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M1249.1,469.5c-4.35.32-8.59.87-12.76,1.54a196.8,196.8,0,0,0-24.22,5.56,243.82,243.82,0,0,0-44.65,18.33,246.67,246.67,0,0,0-40.37,26.47q-7,5.69-13.66,12.14c1.38-29.55,1.81-59.14,1.13-88.74q-.45-16.06-1.19-32.11-.91-16.06-2.13-32.1-1.39-16-3.19-32.07l-2.06-16q-.32-2.15-.62-4.29l2.6-.75c34.22-10.06,67.47-22.26,100.2-34.95s64.93-26,97.2-39.22,64.6-26.18,97.94-39.39v0h.19l-1.2-5.78c-36.23-1-72.35,4.11-107.37,12.2s-69.1,19.42-102.22,32.14-65.42,26.86-97.28,41.69c-8,3.63-15.92,7.4-23.85,11.22s-15.87,7.54-23.78,11.47q-11.91,5.65-23.77,11.7l-11.93,5.87c-4,2-7.95,4-11.91,6.16l1.9,8.63.55-.2,0,.07c4.49-.44,8.94-1,13.43-1.55s8.94-1.19,13.4-1.83q13.28-2.26,26.51-4.92,13.11-2.91,26.17-6.14,5.19-1.38,10.37-2.8l-.09.56-2.37,15.9q-2.38,15.89-4.32,31.76t-3.79,31.71q-1.84,15.85-3.37,31.68c-4.23,42.23-7.56,84.41-10.34,126.65s-4.92,84.52-6.09,127q-.47,15.93-.65,31.91t-.15,32c0,5.34,0,10.69.13,16.05s.17,10.72.37,16.1c.26,10.74.65,21.52,1.54,32.38,3.68-10.24,6.86-20.56,9.91-30.91,1.5-5.18,2.9-10.37,4.29-15.57s2.75-10.4,4.05-15.62q3.8-15.66,7.18-31.4t6.17-31.56a1253.74,1253.74,0,0,0,16-127.37q.58-7.67,1.07-15.34c2.18-.27,4.34-.58,6.48-.93a198.68,198.68,0,0,0,24.22-5.57A246.66,246.66,0,0,0,1187.48,533a243.82,243.82,0,0,0,40.4-26.42,196.79,196.79,0,0,0,18.3-16.81c2.91-3.06,5.77-6.24,8.5-9.64a97.12,97.12,0,0,0,7.84-10.9A97.1,97.1,0,0,0,1249.1,469.5Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M1464.72,708.67c-.59-.87-1.07-1.83-1.58-2.76l-1.52-2.78c-.89-1.93-1.84-3.8-2.67-5.75s-1.68-3.85-2.36-5.86l-1.08-3c-.34-1-.64-2-1-3-5.18-16.06-7.49-33-9.71-50.17q-1.17-9.67-2-19.33a313.92,313.92,0,0,0-1.6-85.3l-35.66,1.93q.23,6.69.66,13.35a328.3,328.3,0,0,1-14.78,109.49c-2.95,9.7-6.55,19.17-10.38,28.53-2.06,4.62-4,9.31-6.23,13.83-1.11,2.27-2.14,4.58-3.32,6.82l-3.53,6.7c-1.2,2.32-2.27,4.29-3.42,6.17-.56,1-1.15,1.84-1.73,2.77s-1.17,1.75-1.76,2.57-1.19,1.64-1.78,2.35l-.88,1.11-.88,1-.44.51-.44.44-.86.9-.84.76-.41.39c-.14.12-.27.2-.4.31s-.52.42-.78.63-.49.31-.72.48l-.35.26-.32.17a6.3,6.3,0,0,0-.62.38,3.57,3.57,0,0,0-.54.24c-.09,0-.18.11-.26.14l-.24.06c-.15,0-.31.14-.45.19a1.53,1.53,0,0,0-.42.09.87.87,0,0,1-.43.07c-.14,0-.29.07-.43.09a6.32,6.32,0,0,1-.83,0,9.24,9.24,0,0,1-2.46-.64,22.53,22.53,0,0,1-7-4.92c-1.2-1.09-2.4-2.74-3.67-4.14-.61-.74-1.11-1.58-1.69-2.36l-.85-1.19c-.29-.39-.5-.85-.76-1.27l-1.52-2.57-1.35-2.75-.69-1.38-.59-1.47-1.19-3c-.64-2.1-1.44-4.1-2-6.32-.29-1.09-.61-2.16-.88-3.28l-.73-3.4c-1.9-9.12-2.69-19.11-3.15-29.38-.17-5.18-.28-10.4-.32-15.76l-.14-16.27c-.5-43.5-1.82-87-4.75-130.67l-1.28-19-6.36,16.94a69.09,69.09,0,0,0-2.44,7.71,75.41,75.41,0,0,0-1.53,7.85,69.55,69.55,0,0,0-.63,7.87c0,1.36,0,2.72,0,4.07-5.28,34.53-9.63,69.11-13.45,103.71-.6,5.42-1.18,10.77-1.73,16.26s-1,11.12-1.41,16.79-.57,11.49-.46,17.44c0,2.94.17,6,.28,9,.09,1.51.25,3,.37,4.56s.25,3,.48,4.59l.62,4.63c.24,1.55.56,3.12.84,4.68l.44,2.34c.15.78.38,1.57.56,2.36l1.2,4.72c.47,1.58,1,3.15,1.5,4.73l.77,2.36.94,2.35c.64,1.57,1.26,3.14,1.93,4.7l2.31,4.61c.4.76.76,1.54,1.21,2.29l1.36,2.23c.93,1.48,1.79,3,2.8,4.43l3.14,4.24a51.24,51.24,0,0,0,3.48,4.22,63.35,63.35,0,0,0,18.89,14.47,49.48,49.48,0,0,0,13,4.3,48.22,48.22,0,0,0,7.27.73c1.22,0,2.42,0,3.64-.1a28.48,28.48,0,0,0,3.62-.33q1.8-.27,3.59-.6c1.17-.25,2.31-.59,3.47-.9l1.72-.5c.56-.19,1.09-.4,1.63-.6q1.62-.62,3.23-1.29t3-1.51c.49-.26,1-.52,1.47-.78l1.37-.84c.9-.57,1.82-1.14,2.7-1.72L1380,764c.41-.31.83-.61,1.22-.93l1.12-.95,2.23-1.92,2-2,1-1,.94-1,1.85-2c.6-.67,1.15-1.34,1.72-2,1.17-1.35,2.17-2.71,3.22-4.07s2-2.73,2.91-4.09,1.83-2.73,2.66-4.1c1.73-2.73,3.29-5.51,4.62-8l4.13-7.67c1.36-2.56,2.57-5.2,3.86-7.8,2.62-5.18,4.86-10.53,7.16-15.86.59-1.32,1.11-2.68,1.63-4l1.57-4.06c1-2.71,2.15-5.38,3-8.14l2.77-8.24.69-2.06L1431,672l1-3.55q.74,1.88,1.5,3.75c.93,2.11,1.8,4.23,2.78,6.32s1.91,4.18,3,6.23l1.58,3.08c.52,1,1.14,2,1.7,3a103.68,103.68,0,0,0,16.54,22.22,68.16,68.16,0,0,0,22.43,15.19A76.19,76.19,0,0,1,1464.72,708.67Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M1613.17,733.88a12.14,12.14,0,0,1-5.61,2.45,16.83,16.83,0,0,1-11.31-2,13.33,13.33,0,0,1-2-1.56,9.25,9.25,0,0,1-1.42-1.8,19.63,19.63,0,0,1-2.29-4.9,27.73,27.73,0,0,1-1.11-5.47,40.33,40.33,0,0,1-.2-5.94,124.44,124.44,0,0,1,1.22-12.92c.63-4.62,1.26-9.34,1.83-14q1.76-14,3.27-28.08,3-28.09,5.25-56.2,1.12-14.05,2.06-28.11c.33-4.69.62-9.37.9-14.06l.43-7c.13-2.35.28-5.16.21-8.41,0-1.64-.14-3.39-.34-5.27a48.79,48.79,0,0,0-1.06-6,39.94,39.94,0,0,0-2.2-6.55l-.37-.83c-.12-.27-.25-.54-.42-.88q-.49-1-1-1.9a36.46,36.46,0,0,0-2.31-3.49,35.17,35.17,0,0,0-5.63-6,34.21,34.21,0,0,0-7.25-4.74,32.47,32.47,0,0,0-9.39-2.94,30.58,30.58,0,0,0-11.25.45,31,31,0,0,0-9.92,4.25,38.06,38.06,0,0,0-6.18,5.05c-1.54,1.54-2.68,2.88-3.57,3.92l-2.43,3-4.8,6c-1.6,2-3,4.1-4.55,6.14l-2.25,3.09c-.75,1-1.51,2.05-2.19,3.13l-4.17,6.4-2.07,3.21-1.93,3.29-3.83,6.61c-1.25,2.22-2.37,4.5-3.56,6.75l-1.75,3.39c-.59,1.13-1.18,2.25-1.69,3.42l-3.16,6.94c-.52,1.16-1.06,2.31-1.56,3.48l-1.42,3.54-2.81,7.08c-.8,2.15-1.52,4.33-2.27,6.5l-2.41-6.77c-1.2-3.21-2.41-6.42-3.67-9.6a320.85,320.85,0,0,0-17.35-37.12c1.85,13.53,3.71,26.88,5.26,40.19.33,3.34.72,6.66,1.11,10l1,10,.92,9.92.76,9.91q1.19,16.41,1.71,32.73a248,248,0,0,0,.13,46.19l34.73-1.36,0-.22h0a272.69,272.69,0,0,1,6.17-51.69c.21-1.06.44-2.12.72-3.16l.78-3.15c.53-2.1,1-4.2,1.57-6.29l1.83-6.22.89-3.11c.29-1,.68-2,1-3.08,1.39-4.09,2.7-8.19,4.31-12.2.78-2,1.5-4,2.32-6s1.72-4,2.55-5.94l1.26-3c.44-1,.92-1.94,1.38-2.92l2.79-5.82c.44-1,.94-1.93,1.45-2.88l1.5-2.85c1-1.89,2-3.82,3-5.68,3.62-6.25,7.33-12.46,11.4-18.42,0,3.41.09,6.81.17,10.22q.25,14.09.7,28.18.88,28.18,2.53,56.38.84,14.1,1.91,28.21c.35,4.72.74,9.38,1.16,14.14.2,2.42.44,4.92.76,7.46a73.45,73.45,0,0,0,1.32,7.74,55,55,0,0,0,2.32,7.89,36.71,36.71,0,0,0,3.86,7.67,31.68,31.68,0,0,0,5.79,6.57,20.09,20.09,0,0,0,4,2.69,21.13,21.13,0,0,0,4.29,1.59,23,23,0,0,0,16.27-2,15,15,0,0,0,5.86-5.42,10.29,10.29,0,0,0,1.28-7.32A9.56,9.56,0,0,1,1613.17,733.88ZM1563.29,545l0-.09v0c0-.07.06-.09.13.08a4.42,4.42,0,0,1,.2.6,1.59,1.59,0,0,1-.11-.2A2,2,0,0,1,1563.29,545Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M1772.42,355.71c-.71-4.51-1.54-9-2.52-13.51s-2.13-9-3.42-13.48-2.8-9-4.52-13.42a112,112,0,0,0-6-13.33,116.15,116.15,0,0,0-5.89,13.35c-1.75,4.43-3.24,8.85-4.6,13.26s-2.62,8.81-3.72,13.2-2.14,8.78-3,13.16a361.92,361.92,0,0,0-6.7,52.51,356.86,356.86,0,0,0,.78,52.92q.58,6.68,1.55,13.41c.61,4.49,1.34,9,2.24,13.53s1.87,9.09,3.12,13.69a115.13,115.13,0,0,0,4.41,13.92,111,111,0,0,0,7.5-12.58c2.21-4.24,4.17-8.53,6-12.83s3.41-8.65,4.9-13,2.8-8.75,4-13.15a268.16,268.16,0,0,0,5.91-107.62Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+          <path d="M1754.46,594.61a36.58,36.58,0,0,0-10.53-7.77l-.87.49-.78.49-1.55,1c-1,.63-1.87,1.24-2.7,1.83-1.75,1.19-3.2,2.34-4.59,3.44s-2.61,2.17-3.72,3.22a39.6,39.6,0,0,0-3,3.07,23.91,23.91,0,0,0-5.35,25.49,38.82,38.82,0,0,0,1.55,4.06c.58,1.4,1.38,2.91,2.17,4.46.46.8.85,1.58,1.35,2.41s1,1.67,1.59,2.57,1.17,1.79,1.81,2.73l1.08,1.47.54.74.63.79,1-.07.91-.12,1.82-.25c1.14-.21,2.26-.43,3.28-.71a41,41,0,0,0,5.71-2,32.82,32.82,0,0,0,8.73-5.6,28,28,0,0,0,8.82-15.33,28.47,28.47,0,0,0-2.05-17.71A32.32,32.32,0,0,0,1754.46,594.61Z" transform="translate(-163.72 -207.97)" style="fill:#ff6d00"/>
+        </svg>
+      </div>
+      <div class="header_right">
+        <div class="header_right_720">
+          <div class="header_search">
+            <form>
+              <input type="text" placeholder="输入要搜索的内容">
+              <button onClick="javascript:vold()"> <span>s</span> </button>
+            </form>
+          </div>
+          <ul class="header_btn_group">
+            <li class="header_btn_group_text" onClick="sign_up_ui_on()">注册</li>
+            <li class="header_btn_group_text" onClick="sign_in_ui_on()">登录</li>
+          </ul>
+        </div>
+        
+           <div class="header_right_719">
+          <ul class="header_btn_group">
+            <li class="font_icon header_btn_group_icon" onClick="sign_in_ui_on()">1</li>
+            <li class="font_icon header_btn_group_icon" onClick="sign_in_ui_on()">s</li>
+            <li class="font_icon header_btn_group_icon" onClick="sign_in_ui_on()">m</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </header>
+  <!--页面头部标题结束--> 
+  <!--页面主要部分开始-->
+  <div class="main_content" id="main_content"> 
+    <!--导航栏开始-->
+    <nav>
+      <div class="nav_bar_content">
+        <ul class="nav_dropdown_menu">
+          <div class="nav_bar_content_title">热门游戏</div>
+          <div class="nav_dropdown_menu_bg"></div>
+          <div class="nav_dropdown_menu_container" >
+            <li>跑跑卡丁车</li>
+            <li>愤怒的小鸟</li>
+            <li>小鳄鱼爱洗澡</li>
+            <li>小黄人快跑</li>
+          </div>
+        </ul>
+        <ul class="nav_dropdown_menu">
+          <div class="nav_bar_content_title">新鲜资讯</div>
+          <div class="nav_dropdown_menu_bg"></div>
+          <div class="nav_dropdown_menu_container"  >
+            <li>22222222</li>
+            <li>22222222</li>
+            <li>22222222</li>
+          </div>
+        </ul>
+        <ul class="nav_dropdown_menu">
+          <div class="nav_bar_content_title">通关攻略</div>
+          <div class="nav_dropdown_menu_bg"></div>
+        </ul>
+        <ul class="nav_dropdown_menu">
+          <div class="nav_bar_content_title">游戏论坛</div>
+          <div class="nav_dropdown_menu_bg"></div>
+        </ul>
+      </div>
+    </nav>
+    <!--导航栏结束--> 
+    <!--banner开始-->
+    <div class="banner">
+      <div class="banner_outter_container">
+        <div class="banner_container">
+          <ul class="banner_slide" id="banner_slide">
+			<a class="slide s1" id="s1" target="new" href="http://h-cube.ga"></a>
+            <a class="slide s2" id="s2" target="new" href="http://baidu.com"></a>
+            <a class="slide s3" id="s3" target="new" href="http://163.com"></a>
+            <a class="slide s4" id="s4" target="new" href="http://qq.com"></a>
+          </ul>
+        </div>
+      </div>
+      <ul class="banner_control_point">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="banner_control_btn">
+        <div class="banner_left" id="prev_slide" onClick="prev()"></div>
+        <div class="banner_right" id="next_slide" onClick="next()"></div>
+      </div>
+    </div>
+    <!--banner结束--> 
+    <!--主内容开始-->
+
+    <div class="content_wrap">	
+    
+       <div class="content_right">
+	
+		<div class="card">
+			<div class="card_topic">页面内容</div>
+			<div class="card_content">
+			  <p>页面内容 </p>
+			  <p>页面内容 页面内容 页面内容 </p>
+			  <p>页面内容 页面内容 页面内容&nbsp;页面内容 页面内容 页面内容</p>
+			  <p>页面内容 页面内容 页面内容</p>
+			  <p>页面内容 <br>
+		      </p>
+			  <p>页面内容 页面内容 页面内容 页面内容 页面内容 页面内容页面内容 </p>
+			</div>
+			</div>	
+   	
+   	</div>
+        
+		<div class="content_left">
+			<div class="card">
+			<div class="card_topic">我的游戏</div>
+			<ul class="card_content">
+				<li class="card_title">
+					<div class="game_icon" style="background-image: url(img/popcart.jpg)"></div>
+					<div class="game_li">
+						<div class="game_title" >跑跑卡丁车</div>
+					<div class="game_slogan">全民漂移</div>
+					</div>
+				</li>
+				
+				<li class="card_title">
+				<div class="game_icon" style="background-image: url(img/angrybirds.jpg)"></div>
+				<div class="game_li">
+					<div class="game_title">愤怒的小鸟</div>
+					<div class="game_slogan">小鸟与小猪之间的战斗</div>
+					</div>
+				</li>
+				
+				<li class="card_title">
+				<div class="game_icon" style="background-image: url(img/xhrkp.png)"></div>
+				<div class="game_li">
+					<div class="game_title">小黄人快跑</div>
+					<div  class="game_slogan">小心你前面的障碍</div>
+					</div>
+				</li>
+				
+				<li class="card_title">
+				<div class="game_icon" style="background-image: url(img/showering.png)"></div>
+				<div class="game_li">
+					<div class="game_title">小鳄鱼爱洗澡</div>
+					<div class="game_slogan">我爱洗澡皮肤好好</div>
+					</div>
+				</li>
+			</ul>
+			</div>
+			
+						<div class="card">
+			<div class="card_topic cars_about_me">关于我</div>
+			<ul class="card_content  card_about_me">
+				<li class="card_title card_title_text">我在论坛</li>
+				<li class="card_title card_title_text">游戏日志</li>
+				<li class="card_title card_title_text">我的好友</li>
+				<li class="card_title card_title_text">账号信息</li>
+			</ul>
+			</div>
+			
+		</div>
+   		
+    	
+    	
+    </div>
+    <!--主内容结束--> 
+    
+    <!--全页页脚开始-->
+    <footer class="footer">
+  <div class="footer_content">
+        <div class="footer_part"> 
+      <!--全侧页脚社交媒体图片链接开始-->
+      <div class="footer_social_media">
+            <div class="footer_item_icon"> <a href="http://weibo.com/gogoend" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024.01 829.57"><path d="M75.3,654.9c0,119.3,155.3,215.9,346.7,215.9s346.7-96.6,346.7-215.9S613.5,439,422,439,75.3,535.6,75.3,654.9" transform="translate(0 -84.43)" style="fill:#fff"/><path d="M430.2,853.2c-169.6,16.8-315.9-59.9-327-171.1s117.6-215,287-231.9C559.8,433.4,706.1,510.1,717,621.3c11.2,111.4-117.4,215.3-286.8,231.9m339-369.5c-14.4-4.4-24.3-7.2-16.8-26.1,16.4-41.1,18.1-76.6.3-102-33.2-47.5-124.2-44.9-228.5-1.3,0,0-32.8,14.3-24.3-11.6,16-51.6,13.6-94.7-11.3-119.7-56.5-56.7-207,2.1-336,131.1C56.1,450.7,0,553.1,0,641.7,0,811,217.2,914,429.5,914,708,914,893.2,752.2,893.2,623.8c.2-77.7-65.2-121.8-124-140.1" transform="translate(0 -84.43)" style="fill:#e6162d"/><path d="M954.2,173.9c-67.3-74.6-166.4-103-258-83.5h0A39.17,39.17,0,0,0,712.6,167,192.71,192.71,0,0,1,936.3,414.8h0a39.2,39.2,0,0,0,74.6,24.1v-.1a270.82,270.82,0,0,0-56.7-264.9" transform="translate(0 -84.43)" style="fill:#f93"/><path d="M850.9,267.1a131.69,131.69,0,0,0-125.6-40.6,33.73,33.73,0,1,0,14,66h0a64.43,64.43,0,0,1,74.9,83h0a33.77,33.77,0,0,0,64.3,20.7,132.36,132.36,0,0,0-27.6-129.1" transform="translate(0 -84.43)" style="fill:#f93"/><path d="M439.6,651.7c-5.9,10.2-19.1,15-29.2,10.7-10.2-4.1-13.3-15.5-7.5-25.4s18.5-14.7,28.5-10.7c10.1,3.7,13.8,15.1,8.2,25.4M385.4,721c-16.4,26.1-51.6,37.6-78,25.6-26-11.9-33.8-42.2-17.4-67.8,16.2-25.4,50.2-36.7,76.4-25.7,26.7,11.4,35.2,41.5,19,67.9m61.7-185.1c-80.7-21.1-171.8,19.2-206.9,90.3-35.7,72.5-1.1,153,80.3,179.3,84.5,27.3,184-14.6,218.6-92.7,34.1-76.6-8.5-155.3-92-176.9" transform="translate(0 -84.43)"/></svg></a></div>
+            
+            <div class="footer_item_icon"><a href="https://www.zhihu.com/people/gogoend/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 942.1 921.92"><path d="M588.9,868.6h75.3L689,953.2l135-84.6H983.1V170.5H588.9ZM669,246.3H903V792.8H813.2L723.5,849l-16.3-56.1-38.3-.1.1-546.5ZM522.3,489.9H354.2c5.6-86.9,7.1-165.5,7.1-235.7H525.7s6.3-72.4-27.6-71.6H213.7q16.8-63.15,42.2-130.5s-77.4,0-103.7,69.2C141.3,149.8,109.7,259.7,53.6,372c18.9-2.1,81.5-3.8,118.4-71.3,6.8-18.9,8.1-21.4,16.5-46.6h92.8c0,33.7-3.8,214.6-5.4,235.7H108c-37.7,0-50,75.8-50,75.8H268.7C254.6,725.6,178.7,860.4,41,967c65.8,18.8,131.5-3,163.9-31.8,0,0,73.9-67.1,114.4-222.2L492.7,921.4s25.4-86.3-4-128.3C464.3,764.5,398.5,687,370.5,658.9l-47,37.2q21-67.35,25.3-130.5H546.9c-.2,0-.4-75.7-24.6-75.7Z" transform="translate(-41 -52.1)" style="fill:#0f88eb"/></svg></a> </div>
+            <div class="footer_item_icon"><a href="https://www.linkedin.com/in/jackie-han-7a6960102/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1021.3"><path d="M947.4,2.7H76.6C34.1,2.7,0,36.7,0,76.5V950.2c0,39.7,34,73.8,76.6,73.8H947.4c42.5,0,76.6-34,76.6-73.8V76.5C1024,36.7,989.9,2.7,947.4,2.7Z" transform="translate(0 -2.7)" style="fill:#006192"/><path d="M153.1,385.6H303.4V873.5H153.1Zm76.6-241.1c48.2,0,87.9,39.7,87.9,87.9s-39.7,87.9-87.9,87.9-87.9-39.7-87.9-87.9c0-51,39.7-87.9,87.9-87.9" transform="translate(0 -2.7)" style="fill:#fff"/><path d="M399.9,385.6H544.6v65.2h2.8c19.9-39.7,70.9-79.4,144.7-79.4,153.2,0,181.5,102.1,181.5,232.6V870.7H723.3V632.4c0-56.7,0-130.5-79.4-130.5s-90.8,62.4-90.8,124.8V867.8H402.8V385.6Z" transform="translate(0 -2.7)" style="fill:#fff"/></svg></a> </div>
+            
+            <div class="footer_item_icon"> <a href="https://github.com/gogoend/" target="_blank">
+            
+            <svg id="c5f8442e-ac6d-414b-8da5-0bf587786c59"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1025"><circle cx="512" cy="523.48" r="501.52" style="fill:#fff"/><path d="M512,0C229.25,0,0,229.25,0,512,0,738.25,146.69,930.13,350.16,997.81c25.59,4.69,34.94-11.12,34.94-24.62,0-12.19-.47-52.56-.72-95.31C242,908.81,211.91,817.5,211.91,817.5c-23.31-59.12-56.84-74.87-56.84-74.87-46.53-31.75,3.53-31.12,3.53-31.12,51.41,3.56,78.47,52.75,78.47,52.75,45.69,78.25,119.88,55.63,149,42.5,4.65-33,17.9-55.62,32.5-68.37C304.91,725.44,185.34,681.5,185.34,485.31c0-55.94,20-101.56,52.66-137.41-5.22-13-22.84-65.09,5.06-135.56,0,0,42.94-13.75,140.81,52.5,40.81-11.41,84.59-17,128.13-17.22,43.5.19,87.31,5.88,128.19,17.28,97.69-66.31,140.69-52.5,140.69-52.5,28,70.53,10.38,122.56,5.13,135.5,32.81,35.84,52.63,81.47,52.63,137.41,0,196.69-119.75,240-233.81,252.69,18.44,15.88,34.75,47,34.75,94.75,0,68.44-.69,123.63-.69,140.5,0,13.63,9.31,29.56,35.25,24.56C877.44,930,1024,738.13,1024,512,1024,229.25,794.75,0,512,0Z"/></svg>
+            	
+            	
+            	
+            </a> </div>
+            
+          </div>
+      <!--全侧页脚社交媒体图片链接开始结束--> 
+      <!--全侧页脚文字链接开始-->
+      <div class="footer_item"><a href="http://h-cube.ga/" target="_blank">网站地图</a></div>
+      <div class="footer_item"><a href="http://h-cube.ga/" target="_blank">社交媒体</a></div>
+      <div class="footer_item"><a href="http://h-cube.ga/" target="_blank">用户协议</a></div>
+      <div class="footer_item"><a href="http://wpa.qq.com/msgrd?v=3&uin=228391204&site=qq&menu=yes" target="_blank">联系站长</a></div>
+      <!--全侧页脚文字链接结束--> 
+      <br />
+      <!--全侧页脚版权信息开始-->
+      <div class="footer_copyright">
+            <p>©2017 <a href="mailto:JackieHan@H-Cube.ga">JackieHan@H-Cube.ga</a></p>
+          </div>
+      <!--全页脚版权信息结束--> 
+    </div>
+      </div>
+</footer>
+    <!--全页页脚结束--> 
+    
+  </div>
+  <!--页面主要部分结束--> 
+</div>
+
+<!--全页面遮罩开始-->
+<div id="whole_page_mask" style="visibility:hidden;opacity:1;" onClick="close_all_float_ui()" ></div>
+<!--全页面遮罩结束--> 
+
+<!--登录框开始-->
+<div class="sign_in_box" id="sign_in_box" style="visibility:hidden;opacity:0" > 
+  <!--关闭登录框按钮-->
+  <div class="box_title" id="sign_in_box_title">
+    <div class="sign_in_box_hide_button" onclick="sign_in_ui_off()">
+      <div class="hide_button_container">
+        <svg style="width:20px;" id="close_btn1" data-name="close_btn1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 895.9 895.9">
+          <defs> </defs>
+          <polygon  style="fill:#fff;" points="895.9 35.4 860.5 0 448 412.6 35.4 0 0 35.4 412.6 448 0 860.5 35.4 895.9 448 483.3 860.5 895.9 895.9 860.5 483.3 448 895.9 35.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!--登录表单-->
+  <div  class="sign_in_form">
+    <form id="sign_in_input_area" method="post" action="php/some_output.php">
+      <div class="input_area">
+        <input id="name"     name="name"      type="text"     placeholder="用户名" maxlength="32" onBlur="sign_in_check_name()">
+      </div>
+      <div class="input_area">
+        <input id="password" name="password"  type="password" placeholder="密码"   maxlength="16"
+      onBlur="sign_in_check_password()">
+      </div>
+      <div class="sign_in_button_area">
+        <div class="sign_in_fail_msg" id="sign_in_fail_msg" style="clear: both;color:#FF5730"></div>
+        <button type="button" onClick="sign_in_box_check_all()">登&nbsp;&nbsp;录</button>
+      </div>
+    </form>
+    <div class="sign_up_link_text" onClick="sign_up_ui_on()">
+      <p style="text-align: center">注册一个账号</p>
+    </div>
+  </div>
+</div>
+<!--登录框结束--> 
+
+<!--注册框开始-->
+<div class="sign_up_box" id="sign_up_box" style="visibility:hidden;opacity:0;top:-50%;"> 
+  <!--关闭注册框按钮-->
+  <div class="box_title" id="sign_up_box_title">
+    <div class="sign_up_box_hide_button" onclick="sign_up_ui_off()">
+      <div class="hide_button_container">
+        <svg style="width:20px;" id="close_btn2" data-name="close_btn2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 895.9 895.9">
+          <defs> </defs>
+          <polygon style="fill:#fff;" points="895.9 35.4 860.5 0 448 412.6 35.4 0 0 35.4 412.6 448 0 860.5 35.4 895.9 448 483.3 860.5 895.9 895.9 860.5 483.3 448 895.9 35.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!--注册表单-->
+  <div class="sign_up_form">
+    <form id="sign_up_input_area" method="post" action="php/some_output.php">
+      <div class="input_area">
+        <input id="sign_up_name" 	  name="sign_up_name"            type="text" 	    placeholder="设置您的用户名（4-16个字符）"       onBlur="sign_up_check_name()" maxlength="16">
+      </div>
+      <div class="input_area">
+        <input id="sign_up_email" 		  name="sign_up_email"           type="email" 		placeholder="输入您的电子邮箱地址"        onBlur="sign_up_check_email()"                    maxlength="50">
+      </div>
+      <div class="input_area">
+        <input id="sign_up_password" 		  name="sign_up_password"        type="password" 	placeholder="设置一个密码（6-16个字符）" 	onBlur="sign_up_check_password()"  maxlength="16">
+      </div>
+      <div class="input_area">
+        <input id="sign_up_confirm_password" name="sign_up_confirm_password" type="password" 	placeholder="再输入一次密码" 		      onBlur="sign_up_check_confirm_password()"      maxlength="16">
+      </div>
+      <div style="width:100%">
+        <div class="input_area">
+          <input id="sign_up_captcha"   name="captcha"       type="text"        placeholder="验证码" 			onBlur="sign_up_check_captcha()"           maxlength="4">
+        </div>
+        <img src="php/captcha.php" width="100px" height="30px" id="captcha_img" style="float:right;"
+          onclick="javascript:this.src='php/captcha.php?tm='+Math.random();"></div>
+      <div class="sign_up_button_area">
+        <div class="sign_up_fail_msg" style="clear: both;text-align: center;display: none">验证码输入错误</div>
+        <button type="button" onClick="sign_up_box_check_all()">注&nbsp;&nbsp;册</button>
+      </div>
+    </form>
+    <div class="sign_in_link_text" onclick="sign_in_ui_on()">
+      <p style="text-align: center">已有账号？登录</p>
+    </div>
+  </div>
+</div>
+<!--注册框结束--> 
+
+	
+<script src="js/user_sign_ui.js"></script>
+<script>
+	
+	
+	
+		nextSlideBtn=document.getElementById("next_slide");
+		previousSlideBtn=document.getElementById("perv_slide");
+		slidePlayBox=document.getElementById("banner_slide");
+		slideTransformValue=slidePlayBox.style.transform;
+		function next(){
+			//slidePlayBox.style.transform="rotateY(180deg)";
+			console.log(slidePlayBox.style.transform);
+		}
+		function prev(){
+			console.log(slidePlayBox.style.transform);
+
+		}
+
+	
+	
+	</script>
+</body>
+</html>

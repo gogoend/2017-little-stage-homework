@@ -1,0 +1,170 @@
+/*登录注册框*/
+/*全页面遮罩*/
+#whole_page_mask {
+	position: fixed;
+	background: rgba(0,0,0,0);
+	width: 100%;
+	height: 100%;
+	bottom: 0px;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	z-index: 100;
+	transition: all ease-in-out 0.5s 
+}
+/*登录框+注册框*/
+.sign_in_box{
+	position: fixed;
+	top: -50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	padding: 20px;
+	background: rgba(255,255,255,0);
+	border: 1px solid #FFFFFF;
+	width: 400px;
+	z-index: 120;
+	border-radius: 20px;
+	transition: 0.7s cubic-bezier(1,-0.1, 0, 1.1) all;
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+}
+.sign_up_box {
+	position: fixed;
+	top: -50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	padding: 20px;
+	background: rgba(255,255,255,0);
+	border: 1px solid #FFFFFF;
+	width: 425px;
+	z-index: 120;
+	border-radius: 20px;
+	transition: 0.7s cubic-bezier(1,-0.1, 0, 1.1) all;
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+}
+.sign_in_form, .sign_up_form {
+	padding: 20px;
+	width: 80%;
+	margin: 0px auto
+}
+.input_area{
+	margin:10px auto;
+}
+
+.error_msg{
+}
+
+
+
+
+.sign_in_form input[type="text"],
+.sign_in_form input[type="password"],
+.sign_up_form input[type="text"],
+.sign_up_form input[type="password"],.sign_up_form input[type=email] {
+	font-size: 16px;
+	background: rgba(240,240,240,0.0);
+	padding: 0px 4px;
+	width: 100%;
+	height: 30px;
+	color: rgba(255,255,255,1.00);
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-color: rgba(220,220,220,0.30);
+	transition: 0.3s ease all;
+}
+.sign_in_form input[type="text"]:focus, 
+.sign_in_form input[type="password"]:focus, 
+.sign_up_form input[type="text"]:focus, 
+.sign_up_form input[type="password"]:focus,
+.sign_up_form input[type=email]:focus {
+	border-color: rgba(255,255,255,1);
+	border-bottom-width: 1px;
+	outline:none;/*消除高亮框*/
+}
+.sign_in_button_area, .sign_up_button_area {
+	left: 50%;
+	margin: 0px auto;
+	text-align: center
+}
+.sign_in_form button, .sign_up_form button {
+	margin: 20px auto 0px auto;
+	display: inline-block;
+	width : 60%;
+	height: 50px;
+	background: rgba(0,0,0,0);
+	color: #FFFFFF;
+	border: rgba(255,255,255,0.80) 1px solid;
+	border-radius: 10px;
+	font-size: 20px;
+	cursor: pointer;
+	transition: ease 0.3s all;
+}
+.sign_in_form button:hover, .sign_up_form button:hover {
+	background: rgba(255,255,255,0.8);
+	border: rgba(255,255,255,0.5) 0px solid;
+	border-radius: 15px;
+	cursor: pointer;
+	color: #000000;
+}
+.sign_up_link_text, .sign_in_link_text {
+	color: #ffffff
+}
+.sign_up_link_text p, .sign_in_link_text p {
+	cursor: pointer;
+}
+.sign_up_link_text p:hover, .sign_in_link_text p:hover {
+	text-decoration: underline;
+}
+.sign_in_box_hide_button, .sign_up_box_hide_button {
+	position: absolute;
+	right: 5px;
+	top:5px;
+	margin:0px;
+	padding: 5px;
+	float: right;
+	transition: ease 0.5s all;
+	overflow: hidden;
+}
+
+.sign_in_box_hide_button:hover, .sign_up_box_hide_button:hover {
+	background: rgba(255,0,4,0.71);
+	border-radius: 5px;
+	cursor: pointer;
+	transform: rotate(360deg);
+}
+
+.hide_button_container{
+	height: 20px;
+    width: 20px;
+    overflow: hidden;
+	}
+
+#sign_up_captcha{
+	width:12em;min-width: 5em;float: left;
+}
+
+.box_title{
+width: 100%;
+height: 45px;
+position: absolute;
+top: 0px;
+left: 0px;
+border-radius: 20px 20px 0px 0px;
+}
+
+
+@media (max-width: 720px){
+
+	.sign_up_box{
+		width:300px;
+	}
+	.sign_in_box{
+		width:300px;
+	}
+	#sign_up_captcha{
+		width:3em;
+	}
+}
